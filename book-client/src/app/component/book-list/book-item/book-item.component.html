@@ -1,0 +1,31 @@
+<div class="card my-2">
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold">{{ bookItem.name }}</h5>
+
+    <div class="row my-4">
+      <div class="col">
+        <img
+          class="image-fluid w-50 "
+          [src]="bookItem.imageUrl"
+          [alt]="bookItem.name"
+        />
+        <!-- <img class="image-fluid w-50" *ngIf="!bookItem.imageUrl.length" src="https://www.guardanthealthamea.com/wp-content/uploads/2019/09/no-image.jpg"
+         alt=""> -->
+      </div>
+      <div class="col">
+        <p><b>Price: </b> {{ bookItem.price | currency: "INR" }}</p>
+        <b>Description: </b>
+        <p class="card-text mt-2">{{ bookItem.description }}</p>
+      </div>
+    </div>
+    <div class="float-right">
+      <button class="btn btn-secondary mr-4" (click)="deleteBook(bookItem.id)">
+        Delete
+      </button>
+      <button class="btn btn-secondary" routerLink="/book/{{ bookItem.id }}">
+        Update
+      </button>
+
+    </div>
+  </div>
+</div>
