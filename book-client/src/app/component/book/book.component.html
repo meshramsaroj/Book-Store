@@ -1,5 +1,5 @@
 <div class="m-5">
-  <h4>Create Book</h4>
+  <h1>Create Book</h1>
   <form [formGroup]="bookForm" (ngSubmit)="createBook()">
     <div class="form-group">
       <label for="name">Book Name:</label>
@@ -38,8 +38,10 @@
         placeholder="Enter book price"
       />
     </div>
-
-    <button type="submit" class="btn bg-dark text-light">
+    <button class="btn float-left bg-dark text-light" routerLink="/">
+      Back
+    </button>
+    <button type="submit" class="btn bg-dark text-light float-right">
       Submit
     </button>
   </form>

@@ -20,9 +20,9 @@ export class UpdateBookComponent implements OnInit {
   })
   constructor(
     private activatedRout: ActivatedRoute,
-    private router : Router,
+    private router: Router,
     private bookService: BookService,
-    private snackBar : MatSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -39,9 +39,6 @@ export class UpdateBookComponent implements OnInit {
         this.bookForm.controls.imageUrl.setValue(data.imageUrl);
         this.bookForm.controls.description.setValue(data.description);
         this.bookForm.controls.price.setValue(data.price);
-      },
-      error: err => {
-        console.log(err)
       }
     })
   }
@@ -55,11 +52,11 @@ export class UpdateBookComponent implements OnInit {
       this.bookForm.controls.price.value
     ).subscribe({
       next: data => {
-        this.snackBar.open('Updated Successfully','Close',{duration : 2000});
+        this.snackBar.open('Updated Successfully', 'Close', { duration: 2000 });
         this.router.navigateByUrl('/')
       },
       error: err => {
-        console.log(err);
+        this.snackBar.open("Error", "Close", { duration: 3000 });
       }
     })
   }
